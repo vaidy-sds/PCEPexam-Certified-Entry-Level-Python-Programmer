@@ -1,10 +1,15 @@
-# function to print hello world
 def hello_world():
+    """Define a function to print 'Hello World' to the standard output."""
     print("Hello World")
 
 
-# pytest to check if the function is working
 def test_hello_world(capfd):
-    hello_world()  # call the function
-    out, err = capfd.readouterr()  # capture the output
-    assert out == "Hello World\n"  # check the output
+    """
+    Test case for verifying the 'hello_world' function's output.
+
+    Args:
+    capfd (fixture): Pytest fixture to capture the stdout and stderr.
+    """
+    hello_world()
+    out, err = capfd.readouterr()
+    assert out == "Hello World\n"
